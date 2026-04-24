@@ -1,8 +1,12 @@
-# 🧠 DocMind AI: Production-Ready RAG Document Processor
+# 🧠 DocMind AI: AI Document Intelligence System (RAG) – ASP.NET Core
 
 **Author:** Adesina Mark Omoniyi
 
-DocMind AI is a state-of-the-art, multi-tenant AI document processing platform. It leverages a **Retrieval-Augmented Generation (RAG)** architecture to allow users to upload complex documents (PDF, DOCX, TXT), extract deep insights, and query their content using natural language.
+A production-grade AI system that allows users to upload documents and interact with them using natural language.
+
+Built with ASP.NET Core and powered by LLM integrations, this system uses Retrieval-Augmented Generation (RAG) to deliver accurate, cost-efficient answers from large documents.
+
+---
 
 ![DocMind AI Banner](https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop)
 
