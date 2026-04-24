@@ -1,0 +1,45 @@
+services:
+  aidocument.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080 
+      - ConnectionStrings__DefaultConnection=Host=documentdb;Port=5432;Database=AIDocument;Username=postgres;Password=postgres
+    ports:
+      - "5165:8080"
+
+  app.redis:
+    container_name: app.redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - appredis_data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+  redis-vui:
+    container_name: redis-vui
+    environment:
+      - REDIS_HOSTS=local:app.redis:6379
+    restart: always
+    ports:
+      - "8083:8081"
+
+  documentdb:
+    container_name: documentdb
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=AIDocument
+    ports:
+     - "5432:5432"
+    volumes:
+     - documentdb_space_data:/var/lib/postgresql/data
+  pgadminview:
+    container_name: pgadminview
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8089:80"
+    volumes:
+      - pgadminview-data:/var/lib/pgadmins

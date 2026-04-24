@@ -1,0 +1,24 @@
+services:
+  aidocument.api:
+    image: ${DOCKER_REGISTRY-}aidocumentapi
+    build:
+      context: .
+      dockerfile: AIDocument.Api/Dockerfile
+
+  app.redis:
+    image: redis:latest
+  
+  redis-vui:
+    image: rediscommander/redis-commander:latest
+
+  documentdb:
+    image: pgvector/pgvector:pg17 
+
+  pgadminview:
+    image: elestio/pgadmin:latest
+
+
+volumes:
+  appredis_data:
+  documentdb_space_data:
+  pgadminview-data:

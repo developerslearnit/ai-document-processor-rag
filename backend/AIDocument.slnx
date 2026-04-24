@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="AIDocument.Api/AIDocument.Api.csproj" />
+  <Project Path="AIDocument.Application/AIDocument.Application.csproj" />
+  <Project Path="AIDocument.Domain/AIDocument.Domain.csproj" />
+  <Project Path="AIDocument.Infrastructure/AIDocument.Infrastructure.csproj" />
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+</Solution>
